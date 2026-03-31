@@ -50,7 +50,9 @@ sudo yum install -y selinux-policy selinux-policy-targeted policycoreutils
 sudo vim /etc/selinux/config
 ```
 # Change the value to:
+```
 SELINUX=disabled
+```
 ## 📊 Result
 - SELinux restrictions removed successfully  
 - Application processes were no longer blocked  
