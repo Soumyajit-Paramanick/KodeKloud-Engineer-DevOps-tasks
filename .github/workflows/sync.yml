@@ -1,0 +1,31 @@
+name: Sync to AWS Repo
+
+on:
+  push:
+
+jobs:
+  sync:
+    if: github.actor != 'sync-bot'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout DevOps Repo
+        uses: actions/checkout@v3
+
+      - name: Sync to AWS Repo
+        run: |
+          git config --global user.name "sync-bot"
+          git config --global user.email "sync@github.com"
+
+          # Clone AWS repo
+          git clone https://x-access-token:${{ secrets.SYNC_TOKEN }}@github.com/Soumyajit-Paramanick/KodeKloud-Engineer-AWS-tasks.git aws-repo
+
+          # Copy files
+          rsync -av --exclude='.git' ./ aws-repo/
+
+          cd aws-repo
+
+          # Commit and push if changes exist
+          git add .
+          git commit -m "Auto sync from DevOps repo" || echo "No changes"
+          git push
