@@ -24,7 +24,6 @@ This repository is focused on **enhancing my hands-on experience and reinforcing
 Currently, this repository is organized into the following branches:
 
 - **DevOps** → Contains DevOps-related tasks  
-- **AWS** → Contains AWS-related tasks  
 
 More branches will be added as needed while exploring additional domains.
 
