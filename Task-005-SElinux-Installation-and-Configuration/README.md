@@ -48,7 +48,7 @@ sudo yum install -y selinux-policy selinux-policy-targeted policycoreutils
 
 # Update SELinux configuration file
 sudo vim /etc/selinux/config
-
+```
 # Change the value to:
 SELINUX=disabled
 ## 📊 Result
