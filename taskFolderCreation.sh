@@ -33,5 +33,8 @@ for ((i=1; i<=n; i++)); do
     folder_name="Task-$new_num-$clean_name"
 
     mkdir "$folder_name"
+    cd $folder_name
+    touch README.md
     echo "Created: $folder_name"
+    cd ..
 done
